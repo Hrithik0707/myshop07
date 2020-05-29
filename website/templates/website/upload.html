@@ -1,0 +1,21 @@
+{% extends "website/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Product Details</legend>
+        {{ u_form|crispy }}
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Upload</button>
+    </div>
+</form>
+</div>
+<small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+    {%for message in messages %}
+        <h3>{{message}}</h3>
+    {% endfor %}
+         </small>
+
+{% endblock content %}
