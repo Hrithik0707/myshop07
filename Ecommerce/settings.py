@@ -124,12 +124,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-AWS_ACCESS_KEY_ID = "AKIAU5VQD2T4TL3CGWRY"
-AWS_SECRET_ACCESS_KEY = "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"
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'myshop07'
 AWS_S3_FILE_OVERWRITE =False
 AWS_DEFAULT_ACL= None
